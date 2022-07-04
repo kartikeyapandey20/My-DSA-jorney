@@ -11,17 +11,17 @@ void printArray(int *arr, int size)
     }
     printf("\n");
 }
-
+//FUNCTION FOR SORTING THE ARRAY FOR THE SELECTION SORT 
 void selectionSort(int *arr, int size)
 {
     int temp, indexOfMin;
     for (int i = 0; i < size - 1; i++)
     {
+        // HERE WE HAVE GIVEN THE VALUE OF THE i TO THIS VARIALBLE SO THAT WE CAN CHANGE THE VAULE
+        // OF THE VARIABLE WITHOUT CHANGING THE VALUE OF THE i
         indexOfMin = i;
         for (int j = i + 1; j < size; j++)
         {
-            // HERE WE HAVE GIVEN THE VALUE OF THE I TO THIS VARIALBLE SO THAT WE CAN CHANGE THE VAULE
-            // OF THE VARIABLE WITHOUT CHANGING THE VALUE OF THE
 
             if (arr[j] < arr[indexOfMin])
             {
@@ -41,4 +41,5 @@ int main()
     printArray(arr, size);
     selectionSort(arr, size);
     printArray(arr, size);
+    return 0;
 }
