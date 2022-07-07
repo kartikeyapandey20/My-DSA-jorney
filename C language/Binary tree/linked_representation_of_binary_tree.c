@@ -52,6 +52,6 @@ int main()
     Node *p1 = createNode(1);
     Node *p2 = createNode(4);
     p->left=p1;
-    p->left=p2;
+    p->right=p2;
     return 0;
 }
