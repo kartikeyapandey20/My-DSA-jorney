@@ -19,18 +19,22 @@ Node *createNode(int data)
 
 Node * search(Node * root, int key)
 {
+    //IF THERE IS NO MATCHING KEY IN THE TREE IF WILL RETURN NULL
     if(root == NULL)
     {
         return NULL;
     }
+    //IF WE FIND THE KEY WE WILL THAT ROOT
     if(root->data==key)
     {
         return root;
     }
+    //IF THE DATA OF THE ROOT IS GREATER THAN KEY WE DO RECURSIVE CALL FOR LEFT SIDE OF THE BST 
     else if(root->data>key)
     {
         return search(root->left,key);
     }
+    //IF THE DATA OF THE ROOT IS LESS THAN KEY WE DO RECURSIVE CALL FOR RIGHT SIDE OF THE BST 
     else
     {
         return search(root->right,key);
