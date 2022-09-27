@@ -61,7 +61,7 @@ int main()
     //      / \
     //     1   6
     //    / \
-    // 5   2
+    //   5   2
     p->left = p1;
     p->right = p2;
     p1->left = p3;

@@ -16,7 +16,7 @@ Node *createNode(int data)
     n->right = NULL;                  // SETTING LEFT AND CHILDREN RIGHT TO NULL
     return n;
 }
-//FUNCTION FOR ITREATIVE SEARCH IN BINARY SEARCH TREE
+
 Node * itreativeSearch(Node * root, int key)
 {
     while(root!=NULL)

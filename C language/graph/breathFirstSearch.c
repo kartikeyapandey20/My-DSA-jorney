@@ -49,24 +49,6 @@ int enqueue(struct queue *q, int val)
     }
 }
 
-int queueTraversal(struct queue *q)
-{
-    // struct queue *a=q;
-    int i = q->f;
-    if (isFull(q))
-    {
-        return 0;
-    }
-    else
-    {
-        while (i <= q->r)
-        {
-            printf("%d\n", q->arr[i]);
-            i++;
-        }
-    }
-}
-
 //FUCNTION FOR REMOVING VALUE FROM THE FRONT SIDE AS QUEUE FOLLOWS FIFO CONCEPT
 int dequeue(struct queue *q)
 {
