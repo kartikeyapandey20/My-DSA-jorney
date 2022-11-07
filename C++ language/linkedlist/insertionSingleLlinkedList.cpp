@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<map>
 using namespace std;
 
 class Node{
@@ -56,6 +56,25 @@ void insertInBetween(Node * &tail,Node * &head ,int d , int position){
     nodeToInsert -> next = temp -> next;
     temp ->next = nodeToInsert;
 } 
+
+bool detectLoop(Node *head){
+    if(head == NULL){
+        return false;
+    }
+    map<Node*,bool> visited;
+
+    Node * temp = head ;
+    while(temp != NULL){
+
+        if(visited[temp] == true){
+            return true;
+        }
+        visited[temp] = true;
+        temp = temp ->next;
+    }
+
+    return false;  
+}
 int main()
 {
     Node * node1 = new Node(12);
@@ -77,6 +96,12 @@ int main()
     insertInBetween(tail ,head , 11 , 5);
     insertInBetween(tail ,head , 1 , 1);
     print(head);
+    if(detectLoop(head)){
+        cout << " cycle in linkedlist detected" << endl;
+    }
+    else{
+        cout << "cycle in linkedlist not detected" << endl;
+    }
     return 0 ;
 
 }

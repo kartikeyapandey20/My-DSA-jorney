@@ -17,8 +17,6 @@ public:
 
 void insertAtHead(Node *&head, int d)
 {
-
-    // new node creation
     Node *temp = new Node(d);
     temp->next = head;
     head = temp;
@@ -36,7 +34,17 @@ void print(Node *&head)
     cout << endl;
 }
 
+Node * reverse2(Node * &head){
+    if(head == NULL || head -> next == NULL){
+        return head;
+    }
+    Node * chotaHead = reverse2(head -> next);
 
+    head -> next -> next = head;
+    head -> next = NULL;
+
+    return chotaHead; 
+}
 void reverse(Node *&head, Node * curr , Node* prev){
     if(curr == NULL){
         head = prev;
@@ -51,7 +59,7 @@ Node * reverseLinkedList(Node *&head )
     if(head == NULL || head -> next == NULL){
         return head;
     }
-    Node * curr = head ;
+    Node * curr = head;
     Node * prev = NULL;
     reverse(head , curr , prev);
     return head;
@@ -65,6 +73,8 @@ int main()
     insertAtHead(head, 9);
     print(head);
     head = reverseLinkedList(head);
+    print(head);
+    head = reverse2(head);
     print(head);
     return 0;
 }
