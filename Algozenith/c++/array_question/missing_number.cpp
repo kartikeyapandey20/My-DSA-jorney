@@ -44,8 +44,21 @@ void missingNumberBetter(vector<int> arr , int n)
     }
     cout  << "\nThe Missing Number is " << ans;
 }
+
+void missingNumber(vector<int> arr , int N)
+{
+    int xor1 = 0 , xor2 = 0;
+    for(int i = 0; i < N ; i++)
+    {
+        xor2 = xor2 ^ arr[i];
+        xor1 = xor1 ^ (i+1);
+    }
+    int ans = xor1 ^ xor2;
+    cout  << "\nThe Missing Number is " << ans;
+}
 int main(){
     vector<int> arr = {3,0,1};
     missingNumberBrute(arr,arr.size());
     missingNumberBetter(arr,arr.size());
+    missingNumber(arr,arr.size());  
 }
