@@ -50,6 +50,10 @@ int main(){
 
     int ans = maxSubArrayBrute(nums);
 
-    cout << "Maximum Sub Array as the sum of " << ans << endl;
+    cout << "(Brute)Maximum Sub Array as the sum of " << ans << endl;
+    
+    ans = maxSubArrayBetter(nums);
+
+    cout << "(Better)Maximum Sub Array as the sum of " << ans << endl;
     return 0;
 }
