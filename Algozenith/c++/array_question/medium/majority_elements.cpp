@@ -2,9 +2,6 @@
 
 using namespace std;
 
-
-
-
 int majorityElementBrute(vector<int> nums, int n)
 {
     
