@@ -5,7 +5,7 @@ public:
         int cnt1 = 0;
         for (int x : nums) if (x == 1) ++cnt1;
         if (cnt1 > 0) return n - cnt1;
-
+    
         int g = nums[0];
         for (int x : nums) g = std::gcd(g, x);
         if (g != 1) return -1;
